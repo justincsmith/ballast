@@ -82,6 +82,18 @@ with :class:`~ballast.discovery.consul.ConsulRestRecordList` ::
     servers = ConsulRestRecordList('http://my.consul.url:8500', 'my-service')
     load_balancer = ballast.LoadBalancer(servers)
 
+Eureka REST API
+^^^^^^^^^^^^^^^
+
+To use Eureka (via HTTP REST API) to query :class:`~ballast.discovery.Server` instances, configure a :class:`~ballast.LoadBalancer`
+with :class:`~ballast.discovery.eureka.EurekaRestRecordList` ::
+
+    import ballast
+    from ballast.discovery.eureka import EurekaRestRecordList
+
+    servers = EurekaRestRecordList('http://my.eureka.url:8500', 'my-service')
+    load_balancer = ballast.LoadBalancer(servers)
+
 Load-Balancing Rules
 --------------------
 
